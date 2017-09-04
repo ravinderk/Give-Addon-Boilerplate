@@ -160,11 +160,6 @@ final class Give_Addon_Boilerplate {
 	 * @return bool|null
 	 */
 	public function check_environment() {
-		// Bailout.
-		if ( ! is_admin() || ! current_user_can( 'activate_plugins' ) ) {
-			return null;
-		}
-
 		// Load plugin helper functions.
 		if ( ! function_exists( 'deactivate_plugins' ) || ! function_exists( 'is_plugin_active' ) ) {
 			require_once ABSPATH . '/wp-admin/includes/plugin.php';
